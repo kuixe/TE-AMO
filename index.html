@@ -12,33 +12,25 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       width: 100%;
-      background: linear-gradient(-45deg, #ffe6f0, #fff0f5, #ffe0ec, #ffd6e0);
-      background-size: 400% 400%;
-      animation: gradient 12s ease infinite;
+      background: radial-gradient(circle at top, #fff0f5 0%, #ffe0ec 50%, #ffd6e0 100%);
       font-family: 'Quicksand', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      position: relative;
       overflow: hidden;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.8em;
+      font-size: 2.8em;
       color: #d63384;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 5px #ff99cc;
+      text-shadow: 1px 1px 4px #ff99cc;
       z-index: 2;
     }
 
@@ -47,26 +39,20 @@
       border-radius: 20px;
       padding: 25px 30px;
       max-width: 800px;
-      font-size: 1.3em;
-      line-height: 1.7;
+      font-size: 1.2em;
+      line-height: 1.6;
       color: #a61c57;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       z-index: 2;
-      animation: fadeIn 2s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .heart {
       position: absolute;
-      width: 18px;
-      height: 18px;
-      background: rgba(255, 0, 0, 0.3);
+      width: 16px;
+      height: 16px;
+      background: rgba(255, 0, 0, 0.2);
       transform: rotate(45deg);
-      animation: float 12s infinite ease-in-out;
+      animation: float 14s infinite ease-in-out;
       z-index: 0;
     }
 
@@ -74,19 +60,19 @@
     .heart::after {
       content: '';
       position: absolute;
-      width: 18px;
-      height: 18px;
-      background: rgba(255, 0, 0, 0.3);
+      width: 16px;
+      height: 16px;
+      background: rgba(255, 0, 0, 0.2);
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -9px;
+      top: -8px;
       left: 0;
     }
 
     .heart::after {
-      left: -9px;
+      left: -8px;
       top: 0;
     }
 
@@ -103,9 +89,49 @@
         opacity: 0;
       }
     }
+
+    .decoracion {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,192,203,0.25), transparent);
+      z-index: 1;
+    }
+
+    .decoracion.top {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .decoracion.bottom {
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
+
+      .mensaje {
+        font-size: 1em;
+        padding: 20px;
+      }
+
+      .decoracion {
+        width: 150px;
+        height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Decoración arriba y abajo -->
+  <div class="decoracion top"></div>
+  <div class="decoracion bottom"></div>
+
   <h1>Te amo mi niña 💖<br>Laura Sofía López Burbano</h1>
 
   <div class="mensaje">
@@ -117,7 +143,7 @@
     <strong>¡TE AMOOOOO MUCHOOOO! 💘</strong>
   </div>
 
-  <!-- Corazones animados al fondo -->
+  <!-- Corazones flotantes -->
   <script>
     const cantidad = 50;
     for (let i = 0; i < cantidad; i++) {
@@ -131,3 +157,4 @@
   </script>
 </body>
 </html>
+
