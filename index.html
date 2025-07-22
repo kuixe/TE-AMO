@@ -5,80 +5,88 @@
   <title>Para mi niña Laura</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(-45deg, #ffd6e0, #ffe6f0, #fff0f5, #ffd9ec);
-      background-size: 400% 400%;
-      animation: gradient 10s ease infinite;
+      box-sizing: border-box;
+    }
+
+    body {
       height: 100vh;
+      width: 100%;
+      background: linear-gradient(-45deg, #ffe6f0, #fff0f5, #ffe0ec, #ffd6e0);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
       font-family: 'Quicksand', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 40px 20px;
       overflow: hidden;
     }
 
     @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5em;
+      font-size: 3.8em;
       color: #d63384;
+      margin-bottom: 20px;
       text-shadow: 2px 2px 5px #ff99cc;
-      margin: 0;
+      z-index: 2;
     }
 
     .mensaje {
-      max-width: 90%;
-      margin-top: 20px;
-      font-size: 1.5em;
-      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 25px 30px;
+      max-width: 800px;
+      font-size: 1.3em;
+      line-height: 1.7;
       color: #a61c57;
-      border-radius: 15px;
-      padding: 20px;
-      animation: escribir 6s steps(80) 1;
-      white-space: pre-wrap;
-      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      animation: fadeIn 2s ease-in;
     }
 
-    @keyframes escribir {
-      from { width: 0; }
-      to { width: 100%; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
+      width: 18px;
+      height: 18px;
+      background: rgba(255, 0, 0, 0.3);
       transform: rotate(45deg);
-      animation: float 8s infinite ease-in-out;
+      animation: float 12s infinite ease-in-out;
+      z-index: 0;
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
+      width: 18px;
+      height: 18px;
+      background: rgba(255, 0, 0, 0.3);
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -10px;
+      top: -9px;
       left: 0;
     }
 
     .heart::after {
-      left: -10px;
+      left: -9px;
       top: 0;
     }
 
@@ -88,7 +96,7 @@
         opacity: 0;
       }
       50% {
-        opacity: 1;
+        opacity: 0.4;
       }
       100% {
         transform: translateY(-10vh) rotate(45deg);
@@ -101,26 +109,25 @@
   <h1>Te amo mi niña 💖<br>Laura Sofía López Burbano</h1>
 
   <div class="mensaje">
-    Te extraño mucho mi vida, quiero saber de ti, ¿qué hiciste hoy?
-    Quiero abrazarte y besarte, te he pensado todo el día.
-    Quiero ver tu hermosa sonrisa, eres lo más bonito que me ha pasado.
-    Eres una chica muy fuerte, eres mi chica, mi mujer, mi niña.
-    Y siempre voy a querer que logres todo lo que te propongas, mi vida.
-    ¡TE AMOOOOO MUCHOOOO! 💘
+    Te extraño mucho mi vida, quiero saber de ti, ¿qué hiciste hoy?<br><br>
+    Quiero abrazarte y besarte, te he pensado todo el día.<br><br>
+    Quiero ver tu hermosa sonrisa, eres lo más bonito que me ha pasado.<br><br>
+    Eres una chica muy fuerte, eres mi chica, mi mujer, mi niña.<br><br>
+    Y siempre voy a querer que logres todo lo que te propongas, mi vida.<br><br>
+    <strong>¡TE AMOOOOO MUCHOOOO! 💘</strong>
   </div>
 
-  <!-- Corazones animados -->
+  <!-- Corazones animados al fondo -->
   <script>
-    const cantidad = 40;
+    const cantidad = 50;
     for (let i = 0; i < cantidad; i++) {
       const heart = document.createElement("div");
       heart.className = "heart";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDelay = Math.random() * 5 + "s";
+      heart.style.animationDelay = Math.random() * 12 + "s";
       heart.style.width = heart.style.height = (Math.random() * 10 + 10) + "px";
       document.body.appendChild(heart);
     }
   </script>
 </body>
 </html>
-
