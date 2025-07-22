@@ -3,36 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Para mi niña Laura</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ffe6f0, #ffcce0);
+      background: linear-gradient(-45deg, #ffd6e0, #ffe6f0, #fff0f5, #ffd9ec);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
       height: 100vh;
-      overflow: hidden;
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Quicksand', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #d63384;
       text-align: center;
+      overflow: hidden;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     h1 {
+      font-family: 'Great Vibes', cursive;
       font-size: 3.5em;
-      margin-bottom: 0.2em;
+      color: #d63384;
       text-shadow: 2px 2px 5px #ff99cc;
+      margin: 0;
     }
 
-    p {
-      max-width: 80%;
+    .mensaje {
+      max-width: 90%;
+      margin-top: 20px;
       font-size: 1.5em;
       line-height: 1.6;
-      margin: 0 20px;
-      font-family: 'Arial', sans-serif;
       color: #a61c57;
+      border-radius: 15px;
+      padding: 20px;
+      animation: escribir 6s steps(80) 1;
+      white-space: pre-wrap;
+      overflow: hidden;
+    }
+
+    @keyframes escribir {
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     .heart {
@@ -41,7 +59,7 @@
       height: 20px;
       background: red;
       transform: rotate(45deg);
-      animation: float 6s infinite ease-in-out;
+      animation: float 8s infinite ease-in-out;
     }
 
     .heart::before,
@@ -82,18 +100,18 @@
 <body>
   <h1>Te amo mi niña 💖<br>Laura Sofía López Burbano</h1>
 
-  <p>
-    Te extraño mucho mi vida, quiero saber de ti, ¿qué hiciste hoy?<br>
-    Quiero abrazarte y besarte, te he pensado todo el día.<br>
-    Quiero ver tu hermosa sonrisa, eres lo más bonito que me ha pasado.<br>
-    Eres una chica muy fuerte, eres mi chica, mi mujer, mi niña.<br>
-    Y siempre voy a querer que logres todo lo que te propongas, mi vida.<br>
-    <strong>¡TE AMOOOOO MUCHOOOO! 💘</strong>
-  </p>
+  <div class="mensaje">
+    Te extraño mucho mi vida, quiero saber de ti, ¿qué hiciste hoy?
+    Quiero abrazarte y besarte, te he pensado todo el día.
+    Quiero ver tu hermosa sonrisa, eres lo más bonito que me ha pasado.
+    Eres una chica muy fuerte, eres mi chica, mi mujer, mi niña.
+    Y siempre voy a querer que logres todo lo que te propongas, mi vida.
+    ¡TE AMOOOOO MUCHOOOO! 💘
+  </div>
 
   <!-- Corazones animados -->
   <script>
-    const cantidad = 30;
+    const cantidad = 40;
     for (let i = 0; i < cantidad; i++) {
       const heart = document.createElement("div");
       heart.className = "heart";
@@ -105,3 +123,4 @@
   </script>
 </body>
 </html>
+
