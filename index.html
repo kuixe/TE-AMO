@@ -1,174 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para mi niña Laura</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te Amo, Mi Niña</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      width: 100%;
-      background: radial-gradient(circle at top, #fff0f5 0%, #ffe0ec 50%, #ffd6e0 100%);
-      font-family: 'Quicksand', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px 100px;
+      background: #ffe6f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
       position: relative;
       overflow-x: hidden;
     }
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8em;
-      color: #d63384;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 4px #ff99cc;
-      z-index: 2;
-    }
-
-    .mensaje {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      padding: 25px 30px;
-      max-width: 800px;
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #a61c57;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      z-index: 2;
-    }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 1.1em;
-      color: #b71c5b;
-      z-index: 2;
-      font-style: italic;
-    }
-
-    .heart {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: rgba(255, 0, 0, 0.15);
-      transform: rotate(45deg);
-      animation: float 14s infinite ease-in-out;
+    .fondo-corazones {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.ibb.co/WDMP5q5/corazones.png');
+      background-size: 80px;
+      opacity: 0.08;
       z-index: 0;
     }
 
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: rgba(255, 0, 0, 0.15);
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -8px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -8px;
-      top: 0;
-    }
-
-    .decoracion {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(255,192,203,0.25), transparent);
+    .contenido {
+      position: relative;
       z-index: 1;
+      padding: 60px 20px 40px 20px;
+      text-align: center;
+      min-height: 80vh;
     }
 
-    .decoracion.top {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+    h1 {
+      font-size: 2.2em;
+      color: #c2185b;
+      margin-bottom: 10px;
     }
 
-    .decoracion.bottom {
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(45deg);
-        opacity: 0;
-      }
-      50% {
-        opacity: 0.4;
-      }
-      100% {
-        transform: translateY(-10vh) rotate(45deg);
-        opacity: 0;
-      }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-weight: bold;
+      color: #880e4f;
+      font-size: 1em;
     }
 
-    @media (max-width: 600px) {
+    .abrazo {
+      margin: 30px auto;
+      z-index: 2;
+      position: relative;
+    }
+
+    .abrazo img {
+      max-width: 120px;
+      width: 25vw;
+      height: auto;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 500px) {
       h1 {
-        font-size: 2.2em;
+        font-size: 1.6em;
       }
 
-      .mensaje {
+      p {
         font-size: 1em;
-        padding: 20px;
-      }
-
-      .decoracion {
-        width: 150px;
-        height: 150px;
       }
 
       .footer {
-        font-size: 1em;
-        margin-top: 30px;
+        font-size: 0.9em;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Decoración arriba y abajo -->
-  <div class="decoracion top"></div>
-  <div class="decoracion bottom"></div>
+  <div class="fondo-corazones"></div>
 
-  <h1>Te amo mi niña 💖<br>Laura Sofía López Burbano</h1>
+  <div class="contenido">
+    <h1>Te Amo, Mi Niña 💖<br>Laura Sofia Lopez Burbano</h1>
+    <p>
+      Te extraño mucho, mi vida. Quiero saber de ti, qué hiciste hoy.<br>
+      Quiero abrazarte y besarte. Te he pensado todo el día y quiero ver tu hermosa sonrisa.<br>
+      Eres lo más bonito que me ha pasado, una chica muy fuerte, mi chica, mi mujer, mi niña.<br>
+      Siempre voy a querer que logres todo lo que te propongas, mi vida.<br>
+      <strong>¡TE AMOOOOO MUCHOOOO! 💕</strong>
+    </p>
 
-  <div class="mensaje">
-    Te extraño mucho mi vida, quiero saber de ti, ¿qué hiciste hoy?<br><br>
-    Quiero abrazarte y besarte, te he pensado todo el día.<br><br>
-    Quiero ver tu hermosa sonrisa, eres lo más bonito que me ha pasado.<br><br>
-    Eres una chica muy fuerte, eres mi chica, mi mujer, mi niña.<br><br>
-    Y siempre voy a querer que logres todo lo que te propongas, mi vida.<br><br>
-    <strong>¡TE AMOOOOO MUCHOOOO! 💘</strong>
+    <div class="footer">Siempre contigo, mi amor ❤️</div>
+
+    <div class="abrazo">
+      <img src="https://cdn-icons-png.flaticon.com/512/4569/4569552.png" alt="Pareja abrazándose" />
+    </div>
   </div>
-
-  <div class="footer">Siempre puedes contar conmigo mi cachetona ❤️</div>
-
-  <!-- Corazones flotantes -->
-  <script>
-    const cantidad = 50;
-    for (let i = 0; i < cantidad; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDelay = Math.random() * 12 + "s";
-      heart.style.width = heart.style.height = (Math.random() * 10 + 10) + "px";
-      document.body.appendChild(heart);
-    }
-  </script>
 </body>
 </html>
